@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ramayana early review tracker</title>
+  <style>
+    :root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f5eee7;background:#11131a;font-synthesis:none}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 85% 0,#392820 0,transparent 34%),radial-gradient(circle at 0 60%,#17283a 0,transparent 35%),#11131a}a{color:#ffcb8a;text-decoration:none}a:hover{text-decoration:underline}.wrap{max-width:1180px;margin:auto;padding:42px 24px 70px}.eyebrow{color:#e9a965;letter-spacing:.17em;text-transform:uppercase;font-size:12px;font-weight:800}h1{font-size:clamp(36px,5vw,68px);line-height:1.02;letter-spacing:-.055em;margin:14px 0 18px;max-width:850px}h1 span{color:#efad68}.intro{font-size:17px;line-height:1.65;color:#c8c3c2;max-width:840px;margin:0 0 28px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0 32px}.card,.panel,.row,.note{border:1px solid #ffffff1b;background:#ffffff08;border-radius:18px}.card{padding:22px}.card strong{display:block;font-size:33px;letter-spacing:-.04em}.card span{color:#bdb8b7;font-size:13px}.panel{padding:22px;margin:24px 0}.panelhead{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:20px}h2{font-size:22px;letter-spacing:-.025em;margin:0}.small{color:#a9a5a5;font-size:13px;line-height:1.5}.legend{display:flex;gap:18px;flex-wrap:wrap;color:#c9c2bd;font-size:13px}.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px}.pos{background:#5cd5ab}.neg{background:#f28b88}.silent{background:#777d88}.grid{display:grid;gap:10px}.row{padding:17px 18px;display:grid;grid-template-columns:225px minmax(0,1fr) 170px;gap:20px;align-items:center;transition:background .2s}.row:hover{background:#ffffff10}.topic{font-weight:700}.bar{height:16px;display:flex;gap:3px;min-width:0}.bar i{height:100%;display:block;border-radius:4px}.bar .p{background:linear-gradient(90deg,#2aa985,#64ddae)}.bar .n{background:linear-gradient(90deg,#de696b,#fa9a91)}.bar .s{background:#777d88}.counts{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:13px}.counts .cp{color:#6ce0b3}.counts .cn{color:#ffaaa2}.counts .cs{color:#adb1b8}.detail{color:#aaa5a4;font-size:12px;margin-top:7px;line-height:1.45}.controls{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 20px}button{background:#ffffff0c;border:1px solid #ffffff22;border-radius:999px;color:#e9e3dd;padding:9px 14px;cursor:pointer;font:inherit;font-size:13px}button.active{background:#efad68;color:#1a1513;border-color:#efad68;font-weight:700}.sourcegrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:17px}.source{background:#ffffff08;border:1px solid #ffffff17;border-radius:12px;padding:13px 15px}.source b{display:block;margin-bottom:5px}.source span{color:#aaa5a4;font-size:12px}.note{padding:20px 22px;color:#c7c0ba;line-height:1.6;font-size:14px;margin-top:24px}.note strong{color:#f5eee7}@media(max-width:760px){.cards{grid-template-columns:1fr}.row{grid-template-columns:1fr 155px;gap:10px}.topic{grid-column:1/-1}.sourcegrid{grid-template-columns:1fr}.wrap{padding:28px 16px 50px}.panel{padding:16px}}@media(max-width:460px){.panelhead{display:block}.legend{margin-top:12px}.row{grid-template-columns:1fr 145px}.counts{font-size:12px}}
+  </style>
+  <style>
+    .row .detail{grid-column:1/-1;border-top:1px solid #ffffff1c;padding-top:16px;margin-top:6px;font-weight:400;color:#c9c3bd;font-size:13px}
+    .reviewerheading{font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.09em;margin:14px 0 8px}
+    .revieweritem{display:grid;grid-template-columns:185px 95px minmax(0,1fr);gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px solid #ffffff0f}
+    .revieweritem:last-of-type{border-bottom:0}
+    .evidencelabel{color:#96979d;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+    .reviewcounts{display:flex;gap:12px;margin-top:10px;font-size:12px;font-weight:700}
+    .reviewcounts .cp{color:#6ce0b3}.reviewcounts .cn{color:#ffaaa2}
+    .reviewcounts button{border:1px solid #ffffff25;background:#ffffff0a;padding:6px 10px;font-size:12px;font-weight:700}
+    .reviewcounts button[aria-expanded="true"]{background:#ffffff1b}
+    .source-detail{margin-top:12px;border-top:1px solid #ffffff1c;padding-top:8px}
+    .source-point{padding:8px 0;border-bottom:1px solid #ffffff12;font-size:13px;line-height:1.45}
+    .source-point:last-child{border-bottom:0}.source-point b{display:block;margin-bottom:3px}
+    .source-point .evidencelabel{display:block;margin-bottom:3px}
+    @media(max-width:620px){.revieweritem{grid-template-columns:1fr auto;gap:4px}.revieweritem>div{grid-column:1/-1}}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <div class="eyebrow">Early review tracker · 1 November 2026</div>
+  <h1>What reviewers said about <span>Ramayana</span></h1>
+  <p class="intro">A topic-by-topic view of 16 identifiable critics and channels who discussed <em>Ramayana: Rise of a Legend</em> after the Los Angeles premiere or an earlier US screening. Select a topic to see who expressed each opinion.</p>
+  <section class="cards" aria-label="Summary"><div class="card"><strong>16</strong><span>reviewers and channels in this sample</span></div><div class="card"><strong>11</strong><span>topics tracked</span></div><div class="card"><strong>6</strong><span>credited critics listed by Rotten Tomatoes</span></div></section>
+  <section class="panel" aria-labelledby="charttitle"><div class="panelhead"><div><h2 id="charttitle">Positive, negative, and no comment</h2><div class="small">Click any row for the reviewer names. Gray shows people who did not speak about the topic.</div></div><div class="legend"><span><i class="dot pos"></i>Positive</span><span><i class="dot neg"></i>Negative</span><span><i class="dot silent"></i>No comment</span></div></div><div class="controls" role="group" aria-label="Topic filter"><button class="active" data-filter="all">All topics</button><button data-filter="craft">Craft</button><button data-filter="story">Story & pacing</button><button data-filter="cast">Cast</button><button data-filter="music">Music</button></div><div class="grid" id="rows"></div></section>
+  <section class="panel" aria-labelledby="missingtitle"><h2 id="missingtitle">Songs missing from the shorter English cut</h2><p class="small">These are comments about songs being absent from the version screened, not judgments on the songs’ quality. They are excluded from the Songs row above.</p><div class="sourcegrid"><a class="source" href="https://x.com/MimiiLulu/status/2115312203264094288" target="_blank" rel="noopener noreferrer"><b>mimi ↗</b><span>Short excerpt: “Jai Jai Ram and the infamous haldi scene missing.” She said she wanted to watch the Hindi version.</span></a><a class="source" href="https://www.aajtak.in/entertainment/bollywood-news/story/ramayana-movie-review-by-our-stupid-reaction-youtubers-western-audience-english-dubbing-issues-tmova-dskc-2682437-2026-10-28" target="_blank" rel="noopener noreferrer"><b>Our Stupid Reactions ↗</b><span>Reported paraphrase: the hosts noticed songs missing from the English cut and felt some scenes called for them.</span></a></div></section>
+  <section class="panel" aria-labelledby="sourcetitle"><h2 id="sourcetitle">Review sources</h2><p class="small">Click a positive or negative count to see that reviewer's points and short excerpts. Open the review title for the original source; secondary reporting is labelled.</p><div class="sourcegrid" id="sources"></div></section>
+  <section class="panel" aria-labelledby="videotitle"><h2 id="videotitle">Firsthand YouTube videos</h2><p class="small">These are direct video links. The notes below come from each creator’s own description or from clearly labelled reporting; a title alone does not establish an opinion on a tracked topic.</p><div class="sourcegrid" id="videos"></div></section>
+  <section class="panel" aria-labelledby="feedbacktitle"><h2 id="feedbacktitle">Suggest an addition or correction</h2><p class="small">Found a new category, another reviewer’s comment, or an issue with how a comment was analysed? Please send the reviewer’s name, a link to the original review, and the relevant excerpt or timestamp.</p><p><a href="mailto:r21meghashyam@gmail.com?subject=Ramayana%20review%20tracker%20feedback">r21meghashyam@gmail.com ↗</a></p></section>
+  <div class="note"><strong>How these counts work.</strong> One reviewer is counted at most once per sentiment per topic. A mixed review can count in both positive and negative, but never in gray. Gray counts the reviewers who expressed neither sentiment on that topic. Because a mixed opinion appears twice, the three colored segments represent recorded responses rather than 16 exclusive people. “Brahma AI lip sync” covers altered mouth movements. “English dubbing” covers voice performances or an expressed preference against the dubbed version. A reviewer can discuss both. “Songs” counts opinions on the songs themselves; comments that songs were removed from the shorter English cut appear in the separate note above. The counts reflect the limited early sample and are not an audience poll. Venky Reviews is excluded because their viewing circumstances could not be confirmed. Several reviewers saw the English cut, which can differ from the Hindi release. Most YouTube transcripts were unavailable, so video-only claims are limited to the creators’ descriptions and corroborated reporting.</div>
+</main>
+<script>
+const data=[
+ {topic:'Brahma AI lip sync',group:'craft',positive:[],negative:['Giovanni Lago','Siddhant Adlakha','Sucharita Tyagi']},
+ {topic:'English dubbing',group:'craft',positive:['Giovanni Lago'],negative:['Our Stupid Reactions','Priya Mathew','mimi']},
+ {topic:'Storyline',group:'story',positive:['Screened & Scored','Priya Mathew','Who Let Alyssa Out'],negative:['Christian Zilko','Brandon Zachary','Giovanni Lago','Siddhant Adlakha','Avi Offer','Our Stupid Reactions','Sucharita Tyagi']},
+ {topic:'Runtime & pacing',group:'story',positive:['Christian Zilko','Screened & Scored'],negative:['Giovanni Lago','Avi Offer']},
+ {topic:'VFX overall',group:'craft',positive:['Brandon Zachary','Avi Offer','Screened & Scored','Our Stupid Reactions','Priya Mathew','Mr. Like It Or Not','Who Let Alyssa Out'],negative:['Giovanni Lago','Siddhant Adlakha','Priya Mathew']},
+ {topic:'CGI creatures',group:'craft',positive:['Screened & Scored'],negative:['Giovanni Lago']},
+ {topic:'Ranbir as Rama',group:'cast',positive:['Brandon Zachary','Giovanni Lago','Our Stupid Reactions','Rama’s Screen','Theresa Simoni','mimi','Mr. Like It Or Not'],negative:['Priya Mathew','Sucharita Tyagi']},
+ {topic:'Sai Pallavi as Sita',group:'cast',positive:['Brandon Zachary','Our Stupid Reactions','Sucharita Tyagi'],negative:[]},
+ {topic:'Yash as Ravana',group:'cast',positive:['Brandon Zachary','Giovanni Lago','Screened & Scored','Our Stupid Reactions','Rama’s Screen'],negative:[]},
+ {topic:'Background score',group:'music',positive:['Giovanni Lago','Screened & Scored','Our Stupid Reactions','Priya Mathew'],negative:[]},
+ {topic:'Songs',group:'music',positive:['Priya Mathew'],negative:[]}
+];
+const sources=[
+ ['Christian Zilko','IndieWire · full review','https://www.indiewire.com/criticism/movies/ramayana-rise-of-a-legend-review-1235224631/'],
+ ['Brandon Zachary','Screen Rant · full review','https://screenrant.com/ramayana-2026-movie-review/'],
+ ['Giovanni Lago','Next Best Picture · full review','https://nextbestpicture.com/ramayana-rise-of-a-legend/'],
+ ['Siddhant Adlakha','IGN · full review','https://www.ign.com/articles/ramayana-rise-of-a-legend-review'],
+ ['Avi Offer','NYC Movie Guru · full review','http://www.nycmovieguru.com/nov6th26.html#ramayana'],
+ ['Sucharita Tyagi','YouTube · review and detailed creator description','https://www.youtube.com/watch?v=4o5uwejuY_Y'],
+ ['Screened & Scored','Letterboxd · full review','https://letterboxd.com/screened_scored/film/ramayana-rise-of-a-legend/'],
+ ['Our Stupid Reactions','YouTube · LA premiere review','https://www.youtube.com/watch?v=HCxuoKjhwhA'],
+ ['Rama’s Screen','X · quoted first reaction; full YouTube review below','https://x.com/RamasScreen/status/2115307593006821457'],
+ ['Theresa Simoni','X · first reaction','https://x.com/theresasimoni55/status/2115310430977417575'],
+ ['Priya Mathew','Earlier US screening · posts collected by MensXP','https://www.mensxp.com/amp/entertainment/bollywood/186481-ramayana-first-review-out-us-critic-praises-ranbir-kapoor-yash-epic.html'],
+ ['Anthony Deveney','Raiders of the Lost Podcast · Letterboxd, 3½★; called it “pure cinematic escapism”','https://letterboxd.com/raiderslostpod/film/ramayana-rise-of-a-legend/'],
+ ['mimi','X · firsthand post after premiere','https://x.com/MimiiLulu/status/2115312203264094288'],
+ ['Mr. Like It Or Not','YouTube · first-person exit reaction','https://www.youtube.com/watch?v=L4-uj3RKXuk'],
+ ['Who Let Alyssa Out','YouTube · spoiler review and creator description','https://www.youtube.com/watch?v=n4RKRv3GYvI'],
+ ['Tyler Calvert','YouTube · first-person review, “A True Epic”; no specific tracked opinion confirmed','https://www.youtube.com/watch?v=l39XQz7AMpE']
+];
+const rows=document.querySelector('#rows');
+const evidence={
+ 'Brahma AI lip sync':{
+  negative:{'Giovanni Lago':['quote','only distracts viewers'],'Siddhant Adlakha':['quote','awkward AI lip-syncing'],'Sucharita Tyagi':['quote','Shoddy and spotty AI-enabled lip-synced dialogue']}
+ },
+ 'English dubbing':{
+  positive:{'Giovanni Lago':['quote','English voice actors’ performances are as good as they can be']},
+  negative:{'Our Stupid Reactions':['summary','They felt the English dubbing did not work consistently.'],'Priya Mathew':['quote','did not appreciate the English dubbing'],'mimi':['quote','Only wish it was in Hindi because better impact']}
+ },
+ 'Storyline':{
+  positive:{'Screened & Scored':['quote','an incredibly human story'],'Priya Mathew':['quote','I felt connected to the story'],'Who Let Alyssa Out':['summary','Her video description says she appreciated discovering the story and its cultural significance.']},
+  negative:{'Christian Zilko':['quote','lacks some voice'],'Brandon Zachary':['quote','leave them feeling one-note'],'Giovanni Lago':['quote','feels so stuffed at times'],'Siddhant Adlakha':['quote','just a Part 1'],'Avi Offer':['quote','emotionally hollow'],'Our Stupid Reactions':['summary','They felt the story assumes Western viewers already know its characters and events.'],'Sucharita Tyagi':['summary','Her description says Rama is given too little personality and inner life in Part One.']}
+ },
+ 'Runtime & pacing':{
+  positive:{'Christian Zilko':['quote','will never bore you'],'Screened & Scored':['quote','never felt that runtime']},
+  negative:{'Giovanni Lago':['quote','one of the biggest issues ... its pacing'],'Avi Offer':['quote','bloated, clunky, exhausting']}
+ },
+ 'VFX overall':{
+  positive:{'Brandon Zachary':['quote','impressive cinematic achievement'],'Avi Offer':['quote','visually dazzling'],'Screened & Scored':['quote','visual effects are also really damn good'],'Our Stupid Reactions':['summary','They praised the film’s visual effects.'],'Priya Mathew':['quote','VFX were impressive'],'Mr. Like It Or Not':['quote','the VFX looked Solid'],'Who Let Alyssa Out':['quote','breathtaking visuals']},
+  negative:{'Giovanni Lago':['quote','visual effects feel weightless'],'Siddhant Adlakha':['quote','eye-sore CGI'],'Priya Mathew':['quote','looks sort of fake at times']}
+ },
+ 'CGI creatures':{
+  positive:{'Screened & Scored':['quote','creatures ... make this world feel incredibly alive']},
+  negative:{'Giovanni Lago':['quote','how rubbery it looks']}
+ },
+ 'Ranbir as Rama':{
+  positive:{'Brandon Zachary':['quote','Kapoor and Pallavi excel'],'Giovanni Lago':['quote','solid in the titular role'],'Our Stupid Reactions':['summary','They praised Kapoor’s performance as Rama.'],'Rama’s Screen':['quote','Ranbir Kapoor was sublime'],'Theresa Simoni':['quote','some serious talent, moved to tears'],'mimi':['quote','RK as Ram!'],'Mr. Like It Or Not':['summary','He praised the portrayal of Rama in his exit reaction.']},
+  negative:{'Priya Mathew':['quote','I think he was miscast'],'Sucharita Tyagi':['summary','She says the portrayal falls short of what Kapoor could bring to Rama.']}
+ },
+ 'Sai Pallavi as Sita':{
+  positive:{'Brandon Zachary':['quote','Kapoor and Pallavi excel'],'Our Stupid Reactions':['summary','They praised Pallavi’s performance as Sita.'],'Sucharita Tyagi':['quote','Sai Pallavi is resplendent as Sita']}
+ },
+ 'Yash as Ravana':{
+  positive:{'Brandon Zachary':['summary','He singled out Ravana as the most fully developed character.'],'Giovanni Lago':['quote','magnetic screen presence'],'Screened & Scored':['quote','completely stole the show'],'Our Stupid Reactions':['summary','Yash was a particular highlight for both hosts.'],'Rama’s Screen':['quote','Yash was magnetic']}
+ },
+ 'Background score':{
+  positive:{'Giovanni Lago':['quote','evokes the splendor'],'Screened & Scored':['quote','Absolutely breathtaking'],'Our Stupid Reactions':['summary','They praised the background score.'],'Priya Mathew':['quote','loved the music']}
+ },
+ 'Songs':{
+  positive:{'Priya Mathew':['quote','music and songs that were composed by AR Rahman were beautiful']}
+ }
+};
+const sourceLinks=Object.fromEntries(sources.map(([name,,url])=>[name,url]));
+function reviewerList(names,topic,sentiment){
+ if(!names.length)return '<div class="revieweritem">None recorded</div>';
+ return names.map(name=>{
+  const [kind,words]=evidence[topic]?.[sentiment]?.[name]||['summary','Opinion recorded in the linked review; exact wording not available.'];
+  const mark=kind==='quote'?'Short excerpt':'Paraphrase';
+  const content=kind==='quote'?`“${words}”`:words;
+  return `<div class="revieweritem"><a href="${sourceLinks[name]}" target="_blank" rel="noopener noreferrer">${name} ↗</a><span class="evidencelabel">${mark}</span><div>${content}</div></div>`;
+ }).join('')
+}
+function render(filter='all'){
+ rows.innerHTML='';
+ data.filter(d=>filter==='all'||d.group===filter).forEach(d=>{
+  const el=document.createElement('div');el.className='row';el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-expanded','false');
+  const spoken=new Set([...d.positive,...d.negative]);
+  const silent=sources.map(s=>s[0]).filter(name=>!spoken.has(name));
+  const total=d.positive.length+d.negative.length+silent.length;
+  const width=n=>`${n/total*100}%`;
+  el.innerHTML=`<div class="topic">${d.topic}</div><div class="bar" aria-hidden="true"><i class="p" style="width:${width(d.positive.length)}"></i><i class="n" style="width:${width(d.negative.length)}"></i><i class="s" style="width:${width(silent.length)}"></i></div><div class="counts"><b class="cp">+${d.positive.length}</b> &nbsp; <b class="cn">−${d.negative.length}</b> &nbsp; <b class="cs">○${silent.length}</b></div><div class="detail" hidden></div>`;
+  const toggle=()=>{const detail=el.querySelector('.detail'),open=detail.hidden;detail.hidden=!open;el.setAttribute('aria-expanded',String(open));if(open)detail.innerHTML=`<div class="reviewerheading" style="color:#6ce0b3">Positive · ${d.positive.length}</div>${reviewerList(d.positive,d.topic,'positive')}<div class="reviewerheading" style="color:#ffaaa2">Negative · ${d.negative.length}</div>${reviewerList(d.negative,d.topic,'negative')}<div class="reviewerheading" style="color:#adb1b8">No comment · ${silent.length}</div><div>${silent.join(', ')||'None'}</div>`};
+  el.addEventListener('click',toggle);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});rows.append(el)
+ })
+}
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.filter)}));
+const sourceBox=document.querySelector('#sources');sources.forEach(([name,type,url],index)=>{
+ const card=document.createElement('div');card.className='source';
+ const counts={positive:data.filter(d=>d.positive.includes(name)).length,negative:data.filter(d=>d.negative.includes(name)).length};
+ card.innerHTML=`<a href="${url}" target="_blank" rel="noopener noreferrer"><b>${name} ↗</b></a><span>${type}</span><div class="reviewcounts"><button class="cp" type="button" data-sentiment="positive" aria-expanded="false" aria-controls="source-detail-${index}">+${counts.positive} positive</button><button class="cn" type="button" data-sentiment="negative" aria-expanded="false" aria-controls="source-detail-${index}">−${counts.negative} negative</button></div><div class="source-detail" id="source-detail-${index}" hidden></div>`;
+ const detail=card.querySelector('.source-detail');
+ card.querySelectorAll('[data-sentiment]').forEach(button=>button.addEventListener('click',()=>{
+  const sentiment=button.dataset.sentiment;
+  const alreadyOpen=button.getAttribute('aria-expanded')==='true';
+  card.querySelectorAll('[data-sentiment]').forEach(b=>b.setAttribute('aria-expanded','false'));
+  if(alreadyOpen){detail.hidden=true;return}
+  button.setAttribute('aria-expanded','true');detail.hidden=false;
+  const points=data.filter(d=>d[sentiment].includes(name));
+  detail.innerHTML=points.length?points.map(d=>{
+   const [kind,words]=evidence[d.topic]?.[sentiment]?.[name]||['summary','Opinion recorded in the linked review; exact wording not available.'];
+   return `<div class="source-point"><b>${d.topic}</b><span class="evidencelabel">${kind==='quote'?'Short excerpt':'Paraphrase'}</span>${kind==='quote'?`“${words}”`:words}</div>`;
+  }).join(''):'<div class="source-point">No points recorded in the tracked categories.</div>';
+ }));
+ sourceBox.append(card)
+});
+const videos=[
+ ['Sucharita Tyagi','Her description criticises AI lip sync and Rama’s limited characterisation, while praising Sai Pallavi.','4o5uwejuY_Y'],
+ ['Our Stupid Reactions','Premiere review. Aaj Tak reports praise for craft and performances, with reservations about the English cut and missing songs.','HCxuoKjhwhA'],
+ ['Rama’s Screen','Full video review. His earlier X reaction praised the spectacle, Ranbir Kapoor and Yash.','9FPk5iN-7Lo'],
+ ['Mr. Like It Or Not','Exit reaction from an early screening. His own description also calls the VFX solid.','L4-uj3RKXuk'],
+ ['Who Let Alyssa Out','Spoiler review. Her description praises the visuals and says she valued discovering the story.','n4RKRv3GYvI'],
+ ['Tyler Calvert','First-person review titled “A True Epic.” The description gives no reliable topic-level detail.','l39XQz7AMpE']
+];
+const videoBox=document.querySelector('#videos');videos.forEach(([name,note,id])=>{const a=document.createElement('a');a.className='source';a.href='https://www.youtube.com/watch?v='+id;a.target='_blank';a.rel='noopener noreferrer';a.innerHTML=`<b>${name} ▶</b><span>${note}</span>`;videoBox.append(a)});
+render();
+</script>
+</body>
+</html>
