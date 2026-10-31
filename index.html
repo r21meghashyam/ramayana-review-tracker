@@ -29,7 +29,7 @@
   <div class="eyebrow">Early review tracker · 1 November 2026</div>
   <h1>What reviewers said about <span>Ramayana</span></h1>
   <p class="intro">A topic-by-topic view of 16 identifiable critics and channels who discussed <em>Ramayana: Rise of a Legend</em> after the Los Angeles premiere or an earlier US screening. Select a topic to see who expressed each opinion.</p>
-  <section class="cards" aria-label="Summary"><div class="card"><strong>16</strong><span>reviewers and channels in this sample</span></div><div class="card"><strong>11</strong><span>topics tracked</span></div><div class="card"><strong>6</strong><span>credited critics listed by Rotten Tomatoes</span></div></section>
+  <section class="cards" aria-label="Summary"><div class="card"><strong>16</strong><span>reviewers and channels in this sample</span></div><div class="card"><strong>12</strong><span>topics tracked</span></div><div class="card"><strong>6</strong><span>credited critics listed by Rotten Tomatoes</span></div></section>
   <section class="panel" aria-labelledby="charttitle"><div class="panelhead"><div><h2 id="charttitle">Positive, negative, and no comment</h2><div class="small">Click any row for the reviewer names. Gray shows people who did not speak about the topic.</div></div><div class="legend"><span><i class="dot pos"></i>Positive</span><span><i class="dot neg"></i>Negative</span><span><i class="dot silent"></i>No comment</span></div></div><div class="controls" role="group" aria-label="Topic filter"><button class="active" data-filter="all">All topics</button><button data-filter="craft">Craft</button><button data-filter="story">Story & pacing</button><button data-filter="cast">Cast</button><button data-filter="music">Music</button></div><div class="grid" id="rows"></div></section>
   <section class="panel" aria-labelledby="missingtitle"><h2 id="missingtitle">Songs missing from the shorter English cut</h2><p class="small">These are comments about songs being absent from the version screened, not judgments on the songs’ quality. They are excluded from the Songs row above.</p><div class="sourcegrid"><a class="source" href="https://x.com/MimiiLulu/status/2115312203264094288" target="_blank" rel="noopener noreferrer"><b>mimi ↗</b><span>Short excerpt: “Jai Jai Ram and the infamous haldi scene missing.” She said she wanted to watch the Hindi version.</span></a><a class="source" href="https://www.aajtak.in/entertainment/bollywood-news/story/ramayana-movie-review-by-our-stupid-reaction-youtubers-western-audience-english-dubbing-issues-tmova-dskc-2682437-2026-10-28" target="_blank" rel="noopener noreferrer"><b>Our Stupid Reactions ↗</b><span>Reported paraphrase: the hosts noticed songs missing from the English cut and felt some scenes called for them.</span></a></div></section>
   <section class="panel" aria-labelledby="sourcetitle"><h2 id="sourcetitle">Review sources</h2><p class="small">Click a positive or negative count to see that reviewer's points and short excerpts. Open the review title for the original source; secondary reporting is labelled.</p><div class="sourcegrid" id="sources"></div></section>
@@ -41,13 +41,14 @@
 const data=[
  {topic:'Brahma AI lip sync',group:'craft',positive:[],negative:['Giovanni Lago','Siddhant Adlakha','Sucharita Tyagi']},
  {topic:'English dubbing',group:'craft',positive:['Giovanni Lago'],negative:['Our Stupid Reactions','Priya Mathew','mimi']},
- {topic:'Storyline',group:'story',positive:['Screened & Scored','Priya Mathew','Who Let Alyssa Out'],negative:['Christian Zilko','Brandon Zachary','Giovanni Lago','Siddhant Adlakha','Avi Offer','Our Stupid Reactions','Sucharita Tyagi']},
+ {topic:'Storyline',group:'story',positive:['Screened & Scored','Priya Mathew','Who Let Alyssa Out'],negative:['Christian Zilko','Giovanni Lago','Siddhant Adlakha','Avi Offer','Our Stupid Reactions']},
+ {topic:'Characterisation & character development',group:'story',positive:['Brandon Zachary'],negative:['Brandon Zachary','Sucharita Tyagi']},
  {topic:'Runtime & pacing',group:'story',positive:['Christian Zilko','Screened & Scored'],negative:['Giovanni Lago','Avi Offer']},
  {topic:'VFX overall',group:'craft',positive:['Brandon Zachary','Avi Offer','Screened & Scored','Our Stupid Reactions','Priya Mathew','Mr. Like It Or Not','Who Let Alyssa Out'],negative:['Giovanni Lago','Siddhant Adlakha','Priya Mathew']},
  {topic:'CGI creatures',group:'craft',positive:['Screened & Scored'],negative:['Giovanni Lago']},
  {topic:'Ranbir as Rama',group:'cast',positive:['Brandon Zachary','Giovanni Lago','Our Stupid Reactions','Rama’s Screen','Theresa Simoni','mimi','Mr. Like It Or Not'],negative:['Priya Mathew','Sucharita Tyagi']},
  {topic:'Sai Pallavi as Sita',group:'cast',positive:['Brandon Zachary','Our Stupid Reactions','Sucharita Tyagi'],negative:[]},
- {topic:'Yash as Ravana',group:'cast',positive:['Brandon Zachary','Giovanni Lago','Screened & Scored','Our Stupid Reactions','Rama’s Screen'],negative:[]},
+ {topic:'Yash as Ravana',group:'cast',positive:['Brandon Zachary','Giovanni Lago','Screened & Scored','Our Stupid Reactions','Rama’s Screen','Sucharita Tyagi'],negative:[]},
  {topic:'Background score',group:'music',positive:['Giovanni Lago','Screened & Scored','Our Stupid Reactions','Priya Mathew'],negative:[]},
  {topic:'Songs',group:'music',positive:['Priya Mathew'],negative:[]}
 ];
@@ -80,7 +81,11 @@ const evidence={
  },
  'Storyline':{
   positive:{'Screened & Scored':['quote','an incredibly human story'],'Priya Mathew':['quote','I felt connected to the story'],'Who Let Alyssa Out':['summary','Her video description says she appreciated discovering the story and its cultural significance.']},
-  negative:{'Christian Zilko':['quote','lacks some voice'],'Brandon Zachary':['quote','leave them feeling one-note'],'Giovanni Lago':['quote','feels so stuffed at times'],'Siddhant Adlakha':['quote','just a Part 1'],'Avi Offer':['quote','emotionally hollow'],'Our Stupid Reactions':['summary','They felt the story assumes Western viewers already know its characters and events.'],'Sucharita Tyagi':['summary','Her description says Rama is given too little personality and inner life in Part One.']}
+  negative:{'Christian Zilko':['quote','lacks some voice'],'Giovanni Lago':['quote','feels so stuffed at times'],'Siddhant Adlakha':['quote','just a Part 1'],'Avi Offer':['quote','emotionally hollow'],'Our Stupid Reactions':['summary','They felt the story assumes Western viewers already know its characters and events.']}
+ },
+ 'Characterisation & character development':{
+  positive:{'Brandon Zachary':['summary','He singled out Ravana as the most fully developed character.']},
+  negative:{'Brandon Zachary':['quote','leave them feeling one-note'],'Sucharita Tyagi':['summary','Her description says Rama is given too little personality and inner life in Part One.']}
  },
  'Runtime & pacing':{
   positive:{'Christian Zilko':['quote','will never bore you'],'Screened & Scored':['quote','never felt that runtime']},
@@ -102,7 +107,7 @@ const evidence={
   positive:{'Brandon Zachary':['quote','Kapoor and Pallavi excel'],'Our Stupid Reactions':['summary','They praised Pallavi’s performance as Sita.'],'Sucharita Tyagi':['quote','Sai Pallavi is resplendent as Sita']}
  },
  'Yash as Ravana':{
-  positive:{'Brandon Zachary':['summary','He singled out Ravana as the most fully developed character.'],'Giovanni Lago':['quote','magnetic screen presence'],'Screened & Scored':['quote','completely stole the show'],'Our Stupid Reactions':['summary','Yash was a particular highlight for both hosts.'],'Rama’s Screen':['quote','Yash was magnetic']}
+  positive:{'Brandon Zachary':['summary','He praised Yash’s portrayal of Ravana.'],'Giovanni Lago':['quote','magnetic screen presence'],'Screened & Scored':['quote','completely stole the show'],'Our Stupid Reactions':['summary','Yash was a particular highlight for both hosts.'],'Rama’s Screen':['quote','Yash was magnetic'],'Sucharita Tyagi':['summary','She praised Yash’s portrayal of Ravana in her video review.']}
  },
  'Background score':{
   positive:{'Giovanni Lago':['quote','evokes the splendor'],'Screened & Scored':['quote','Absolutely breathtaking'],'Our Stupid Reactions':['summary','They praised the background score.'],'Priya Mathew':['quote','loved the music']}
