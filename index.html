@@ -28,8 +28,8 @@
 <main class="wrap">
   <div class="eyebrow">Review tracker · Updated 10 November 2026</div>
   <h1>What reviewers said about <span>Ramayana</span></h1>
-  <p class="intro">A topic-by-topic view of 156 identifiable critics, creators and review channels discussing <em>Ramayana: Rise of a Legend</em>, from the Los Angeles premiere through the India release. Select a topic to see who expressed each opinion.</p>
-  <section class="cards" aria-label="Summary"><div class="card"><strong>156</strong><span>reviewers and channels in this sample</span></div><div class="card"><strong>13</strong><span>topics tracked</span></div><div class="card"><strong>1</strong><span>new reviewers added in this update</span></div></section>
+  <p class="intro">A topic-by-topic view of 157 identifiable critics, creators and review channels discussing <em>Ramayana: Rise of a Legend</em>, from the Los Angeles premiere through the India release. Select a topic to see who expressed each opinion.</p>
+  <section class="cards" aria-label="Summary"><div class="card"><strong>157</strong><span>reviewers and channels in this sample</span></div><div class="card"><strong>13</strong><span>topics tracked</span></div><div class="card"><strong>1</strong><span>new reviewers added in this update</span></div></section>
   <section class="panel" aria-labelledby="charttitle"><div class="panelhead"><div><h2 id="charttitle">Positive, negative, and no comment</h2><div class="small">Click any row for the reviewer names. Gray shows people who did not speak about the topic.</div></div><div class="legend"><span><i class="dot pos"></i>Positive</span><span><i class="dot neg"></i>Negative</span><span><i class="dot silent"></i>No comment</span></div></div><div class="controls" role="group" aria-label="Topic filter"><button class="active" data-filter="all">All topics</button><button data-filter="craft">Craft & action</button><button data-filter="story">Story, characters & pacing</button><button data-filter="cast">Cast</button><button data-filter="music">Music</button></div><div class="grid" id="rows"></div></section>
   <section class="panel" aria-labelledby="missingtitle"><h2 id="missingtitle">Songs missing from the shorter English cut</h2><p class="small">These are comments about songs being absent from the version screened, not judgments on the songs’ quality. They are excluded from the Songs row above.</p><div class="sourcegrid"><a class="source" href="https://x.com/MimiiLulu/status/2115312203264094288" target="_blank" rel="noopener noreferrer"><b>mimi ↗</b><span>Short excerpt: “Jai Jai Ram and the infamous haldi scene missing.” She said she wanted to watch the Hindi version.</span></a><a class="source" href="https://www.aajtak.in/entertainment/bollywood-news/story/ramayana-movie-review-by-our-stupid-reaction-youtubers-western-audience-english-dubbing-issues-tmova-dskc-2682437-2026-10-28" target="_blank" rel="noopener noreferrer"><b>Our Stupid Reactions ↗</b><span>Reported paraphrase: the hosts noticed songs missing from the English cut and felt some scenes called for them.</span></a><a class="source" href="https://www.absolutegeeks.com/reviews/ramayana-rise-of-a-legend-review-indias-biggest-epic-is-only-half-a-movie/" target="_blank" rel="noopener noreferrer"><b>Nadine J. ↗</b><span>Paraphrase: she said the shorter English cut removes most singing and dancing, which she felt takes away part of the film’s identity and rhythm.</span></a><a class="source" href="https://letterboxd.com/vinaybakshi_/film/ramayana-rise-of-a-legend/1/" target="_blank" rel="noopener noreferrer"><b>vinay bakshi ↗</b><span>He said the English cut removes the musical numbers that usually create spectacle and appeal for Western audiences.</span></a><a class="source" href="https://ashabardoneye.substack.com/p/ramayana-part-onerise-of-a-legend" target="_blank" rel="noopener noreferrer"><b>Asha Bardon ↗</b><span>She saw the Hindi version and noted that it includes the songs cut from the dubbed version.</span></a></div></section>
   <section class="panel" aria-labelledby="sourcetitle"><h2 id="sourcetitle">Review sources</h2><p class="small">Click a positive or negative count to see that reviewer's points and short excerpts. Open the review title for the original source; secondary reporting is labelled.</p><div class="sourcegrid" id="sources"></div></section>
@@ -213,6 +213,7 @@ const sources=[
  ['anandkumarrs','AnandKumarRSonFilms · firsthand Hindi flash review · 8 November','https://anandkumarrsonfilms.com/2026/11/08/ramayana-part-1-hindi-2026-my-flash-review-an-expected-spectacle-sans-an-emotional-core/'],
  ['Suhani Singh','India Today Insight · full review · 9 November','https://www.indiatoday.in/amp/india-today-insight/story/ramayana-part-1-namit-malhotra-nitesh-tiwaris-lavish-take-on-the-hindu-epic-is-a-mixed-bag-3035528-2026-11-09'],
  ['Hunter V Norris','AZFamily · firsthand review · Hindi subtitled uncut version · 5 November','https://www.azfamily.com/2026/11/05/ramayana-rise-legend-review-an-epic-thats-lot-take-quite-enthralling/'],
+ ['Ravi Gupta','India Today · reported firsthand Instagram review · 9 November','https://www.indiatoday.in/movies/celebrities/story/comedian-ravi-gupta-flips-the-script-on-ramayana-turns-mockery-into-praise-3035230-2026-11-09'],
 ];
 const rows=document.querySelector('#rows');
 const evidence={
@@ -506,6 +507,18 @@ Object.assign(evidence['Ranbir as Rama'].positive, {'Hunter V Norris':['summary'
 Object.assign(evidence['Ranbir as Rama'].negative, {'Hunter V Norris':['summary','He described Kapoor’s performance as fairly dry overall.']});
 Object.assign(evidence['Yash as Ravana'].positive, {'Hunter V Norris':['summary','He named Yash among the standout performers and called his Ravana riveting.']});
 Object.assign(evidence['Background score'].positive, {'Hunter V Norris':['summary','He called the Zimmer and Rahman score next level and singled out a musical sequence as worth the ticket price.']});
+
+// Newly verified firsthand Instagram review by Ravi Gupta, reported by India Today on 9 November 2026.
+data.find(d=>d.topic==='Storyline').positive.push('Ravi Gupta');
+data.find(d=>d.topic==='Characterisation & character development').positive.push('Ravi Gupta');
+data.find(d=>d.topic==='VFX overall').positive.push('Ravi Gupta');
+data.find(d=>d.topic==='Yash as Ravana').positive.push('Ravi Gupta');
+data.find(d=>d.topic==='Background score').positive.push('Ravi Gupta');
+Object.assign(evidence['Storyline'].positive, {'Ravi Gupta':['summary','He praised the film for following the epic and presenting dialogue drawn from the text.']});
+Object.assign(evidence['Characterisation & character development'].positive, {'Ravi Gupta':['summary','He praised Ravana’s writing and said Lakshman’s recurring humour adds to the film.']});
+Object.assign(evidence['VFX overall'].positive, {'Ravi Gupta':['summary','He said the visuals mesmerized him from beginning to end and praised the film’s technical craft.']});
+Object.assign(evidence['Yash as Ravana'].positive, {'Ravi Gupta':['summary','He praised Yash’s performance and called him a powerful actor.']});
+Object.assign(evidence['Background score'].positive, {'Ravi Gupta':['summary','He liked Hans Zimmer’s score and singled out its violin passage.']});
 
 const sourceLinks=Object.fromEntries(sources.map(([name,,url])=>[name,url]));
 function reviewerList(names,topic,sentiment){
