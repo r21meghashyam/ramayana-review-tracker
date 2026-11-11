@@ -26,10 +26,10 @@
 </head>
 <body>
 <main class="wrap">
-  <div class="eyebrow">Review tracker · Updated 11 November 2026</div>
+  <div class="eyebrow">Review tracker · Updated 12 November 2026</div>
   <h1>What reviewers said about <span>Ramayana</span></h1>
-  <p class="intro">A topic-by-topic view of 183 identifiable critics, creators and review channels discussing <em>Ramayana: Rise of a Legend</em>, from the Los Angeles premiere through the India release. Select a topic to see who expressed each opinion.</p>
-  <section class="cards" aria-label="Summary"><div class="card"><strong>183</strong><span>reviewers and channels in this sample</span></div><div class="card"><strong>13</strong><span>topics tracked</span></div><div class="card"><strong>7</strong><span>new reviewers added in this update</span></div></section>
+  <p class="intro">A topic-by-topic view of 184 identifiable critics, creators and review channels discussing <em>Ramayana: Rise of a Legend</em>, from the Los Angeles premiere through the India release. Select a topic to see who expressed each opinion.</p>
+  <section class="cards" aria-label="Summary"><div class="card"><strong>184</strong><span>reviewers and channels in this sample</span></div><div class="card"><strong>13</strong><span>topics tracked</span></div><div class="card"><strong>1</strong><span>new reviewer added in this update</span></div></section>
   <section class="panel" aria-labelledby="charttitle"><div class="panelhead"><div><h2 id="charttitle">Positive, negative, and no comment</h2><div class="small">Click any row for the reviewer names. Gray shows people who did not speak about the topic.</div></div><div class="legend"><span><i class="dot pos"></i>Positive</span><span><i class="dot neg"></i>Negative</span><span><i class="dot silent"></i>No comment</span></div></div><div class="controls" role="group" aria-label="Topic filter"><button class="active" data-filter="all">All topics</button><button data-filter="craft">Craft & action</button><button data-filter="story">Story, characters & pacing</button><button data-filter="cast">Cast</button><button data-filter="music">Music</button></div><div class="grid" id="rows"></div></section>
   <section class="panel" aria-labelledby="missingtitle"><h2 id="missingtitle">Songs missing from the shorter English cut</h2><p class="small">These are comments about songs being absent from the version screened, not judgments on the songs’ quality. They are excluded from the Songs row above.</p><div class="sourcegrid"><a class="source" href="https://x.com/MimiiLulu/status/2115312203264094288" target="_blank" rel="noopener noreferrer"><b>mimi ↗</b><span>Short excerpt: “Jai Jai Ram and the infamous haldi scene missing.” She said she wanted to watch the Hindi version.</span></a><a class="source" href="https://www.aajtak.in/entertainment/bollywood-news/story/ramayana-movie-review-by-our-stupid-reaction-youtubers-western-audience-english-dubbing-issues-tmova-dskc-2682437-2026-10-28" target="_blank" rel="noopener noreferrer"><b>Our Stupid Reactions ↗</b><span>Reported paraphrase: the hosts noticed songs missing from the English cut and felt some scenes called for them.</span></a><a class="source" href="https://www.absolutegeeks.com/reviews/ramayana-rise-of-a-legend-review-indias-biggest-epic-is-only-half-a-movie/" target="_blank" rel="noopener noreferrer"><b>Nadine J. ↗</b><span>Paraphrase: she said the shorter English cut removes most singing and dancing, which she felt takes away part of the film’s identity and rhythm.</span></a><a class="source" href="https://letterboxd.com/vinaybakshi_/film/ramayana-rise-of-a-legend/1/" target="_blank" rel="noopener noreferrer"><b>vinay bakshi ↗</b><span>He said the English cut removes the musical numbers that usually create spectacle and appeal for Western audiences.</span></a><a class="source" href="https://ashabardoneye.substack.com/p/ramayana-part-onerise-of-a-legend" target="_blank" rel="noopener noreferrer"><b>Asha Bardon ↗</b><span>She saw the Hindi version and noted that it includes the songs cut from the dubbed version.</span></a></div></section>
   <section class="panel" aria-labelledby="sourcetitle"><h2 id="sourcetitle">Review sources</h2><p class="small">Click a positive or negative count to see that reviewer's points and short excerpts. Open the review title for the original source; secondary reporting is labelled.</p><div class="sourcegrid" id="sources"></div></section>
@@ -240,6 +240,7 @@ const sources=[
  ['Dharmateja17','Letterboxd · firsthand audience review · 4/5 · 8 November','https://letterboxd.com/dharmateja17/film/ramayana-rise-of-a-legend/'],
  ['serenuhhh','Letterboxd · firsthand audience review · 10 November','https://letterboxd.com/serenuhhh/film/ramayana-rise-of-a-legend/'],
  ['camivla','Letterboxd · firsthand audience review · 3/5 · 10 November','https://letterboxd.com/camivla/film/ramayana-rise-of-a-legend/'],
+ ['Himawan Pratista','Montasefilm · firsthand Indonesian review · 208-minute screening with intermission · 11 November','https://montasefilm.com/ramayana-rise-of-a-legend/'],
 ];
 const rows=document.querySelector('#rows');
 const evidence={
@@ -294,6 +295,25 @@ const evidence={
   negative:{'Praneet Samaiya':['summary','He found the songs unmemorable and lacking emotional connection.']}
  }
 };
+for (const [topic,sentiment] of [
+ ['Storyline','positive'],['Storyline','negative'],
+ ['Characterisation & character development','positive'],['Characterisation & character development','negative'],
+ ['Runtime & pacing','positive'],['Runtime & pacing','negative'],
+ ['Action & choreography','positive'],['VFX overall','positive'],['VFX overall','negative'],
+ ['CGI creatures','negative'],['Background score','positive'],['Songs','positive']
+]) data.find(x=>x.topic===topic)[sentiment].push('Himawan Pratista');
+Object.assign(evidence['Storyline'].positive, {'Himawan Pratista':['summary','He found the later forest section resonant with the RA Kosasih comic he knew, while the film’s human values and musical imagery made the classic epic entertaining.']});
+Object.assign(evidence['Storyline'].negative, {'Himawan Pratista':['summary','He felt the early exposition rushed through Ravana’s introduction and the film’s pre-intermission storytelling left key relationships underdeveloped.']});
+Object.assign(evidence['Characterisation & character development'].positive, {'Himawan Pratista':['summary','He said the later forest section made it easier to empathize with Rama, Sita, Lakshmana and Ravana.']});
+Object.assign(evidence['Characterisation & character development'].negative, {'Himawan Pratista':['summary','He said the early section moved too quickly for viewers to know the characters well, and Rama–Sita chemistry was not explored enough.']});
+Object.assign(evidence['Runtime & pacing'].positive, {'Himawan Pratista':['summary','He said he did not find any portion of the 208-minute screening dispensable or excessively long.']});
+Object.assign(evidence['Runtime & pacing'].negative, {'Himawan Pratista':['summary','He found the nearly two-hour first segment tiring and the opening Ravana exposition rushed.']});
+Object.assign(evidence['Action & choreography'].positive, {'Himawan Pratista':['summary','He praised the Ravana–Jatayu battle as especially compelling.']});
+Object.assign(evidence['VFX overall'].positive, {'Himawan Pratista':['summary','He said the effects improved after the rough opening and found the Ravana–Jatayu sequence visually convincing.']});
+Object.assign(evidence['VFX overall'].negative, {'Himawan Pratista':['summary','He found many effects in the opening exposition poor and said some fire effects were not visually smooth.']});
+Object.assign(evidence['CGI creatures'].negative, {'Himawan Pratista':['summary','He said some forest monsters and Kumbhakarna looked rough.']});
+Object.assign(evidence['Background score'].positive, {'Himawan Pratista':['summary','He said Hans Zimmer’s forceful score gives scenes energy and strengthens the action sequences.']});
+Object.assign(evidence['Songs'].positive, {'Himawan Pratista':['summary','Although he noted there are no character musical numbers, he said the songs and accompanying music leave an impression.']});
 Object.assign(evidence['Action & choreography'].positive, {'Cult Kannada':['summary','The review praised the Jatayu battle as a standout action sequence.'],'Y Maheswara Reddy':['summary','He praised the vividly portrayed Jatayu rescue battle.']});
 Object.assign(evidence['VFX overall'].positive, {'Cult Kannada':['summary','The review praised the effects that depict Ayodhya and Lanka.'],'Y Maheswara Reddy':['summary','He praised the CGI-enhanced battle scenes and impressive kingdom sets.']});
 Object.assign(evidence['Storyline'].positive, {'Cult Kannada':['summary','The review said the film adds modern technology while preserving the original story.']});
