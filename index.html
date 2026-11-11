@@ -28,8 +28,8 @@
 <main class="wrap">
   <div class="eyebrow">Review tracker · Updated 11 November 2026</div>
   <h1>What reviewers said about <span>Ramayana</span></h1>
-  <p class="intro">A topic-by-topic view of 172 identifiable critics, creators and review channels discussing <em>Ramayana: Rise of a Legend</em>, from the Los Angeles premiere through the India release. Select a topic to see who expressed each opinion.</p>
-  <section class="cards" aria-label="Summary"><div class="card"><strong>172</strong><span>reviewers and channels in this sample</span></div><div class="card"><strong>13</strong><span>topics tracked</span></div><div class="card"><strong>1</strong><span>new reviewers added in this update</span></div></section>
+  <p class="intro">A topic-by-topic view of 173 identifiable critics, creators and review channels discussing <em>Ramayana: Rise of a Legend</em>, from the Los Angeles premiere through the India release. Select a topic to see who expressed each opinion.</p>
+  <section class="cards" aria-label="Summary"><div class="card"><strong>173</strong><span>reviewers and channels in this sample</span></div><div class="card"><strong>13</strong><span>topics tracked</span></div><div class="card"><strong>1</strong><span>new reviewers added in this update</span></div></section>
   <section class="panel" aria-labelledby="charttitle"><div class="panelhead"><div><h2 id="charttitle">Positive, negative, and no comment</h2><div class="small">Click any row for the reviewer names. Gray shows people who did not speak about the topic.</div></div><div class="legend"><span><i class="dot pos"></i>Positive</span><span><i class="dot neg"></i>Negative</span><span><i class="dot silent"></i>No comment</span></div></div><div class="controls" role="group" aria-label="Topic filter"><button class="active" data-filter="all">All topics</button><button data-filter="craft">Craft & action</button><button data-filter="story">Story, characters & pacing</button><button data-filter="cast">Cast</button><button data-filter="music">Music</button></div><div class="grid" id="rows"></div></section>
   <section class="panel" aria-labelledby="missingtitle"><h2 id="missingtitle">Songs missing from the shorter English cut</h2><p class="small">These are comments about songs being absent from the version screened, not judgments on the songs’ quality. They are excluded from the Songs row above.</p><div class="sourcegrid"><a class="source" href="https://x.com/MimiiLulu/status/2115312203264094288" target="_blank" rel="noopener noreferrer"><b>mimi ↗</b><span>Short excerpt: “Jai Jai Ram and the infamous haldi scene missing.” She said she wanted to watch the Hindi version.</span></a><a class="source" href="https://www.aajtak.in/entertainment/bollywood-news/story/ramayana-movie-review-by-our-stupid-reaction-youtubers-western-audience-english-dubbing-issues-tmova-dskc-2682437-2026-10-28" target="_blank" rel="noopener noreferrer"><b>Our Stupid Reactions ↗</b><span>Reported paraphrase: the hosts noticed songs missing from the English cut and felt some scenes called for them.</span></a><a class="source" href="https://www.absolutegeeks.com/reviews/ramayana-rise-of-a-legend-review-indias-biggest-epic-is-only-half-a-movie/" target="_blank" rel="noopener noreferrer"><b>Nadine J. ↗</b><span>Paraphrase: she said the shorter English cut removes most singing and dancing, which she felt takes away part of the film’s identity and rhythm.</span></a><a class="source" href="https://letterboxd.com/vinaybakshi_/film/ramayana-rise-of-a-legend/1/" target="_blank" rel="noopener noreferrer"><b>vinay bakshi ↗</b><span>He said the English cut removes the musical numbers that usually create spectacle and appeal for Western audiences.</span></a><a class="source" href="https://ashabardoneye.substack.com/p/ramayana-part-onerise-of-a-legend" target="_blank" rel="noopener noreferrer"><b>Asha Bardon ↗</b><span>She saw the Hindi version and noted that it includes the songs cut from the dubbed version.</span></a></div></section>
   <section class="panel" aria-labelledby="sourcetitle"><h2 id="sourcetitle">Review sources</h2><p class="small">Click a positive or negative count to see that reviewer's points and short excerpts. Open the review title for the original source; secondary reporting is labelled.</p><div class="sourcegrid" id="sources"></div></section>
@@ -229,6 +229,7 @@ const sources=[
  ['Karan Johar','Indian Express · reported firsthand Instagram review · version not stated · 5 November','https://indianexpress.com/article/entertainment/bollywood/ramayana-part-1-movie-review-live-updates-ranbir-kapoor-yash-box-office-10950310/'],
  ['Sham Sharma (The Sham Sharma Show)','YouTube · firsthand video review · version not stated · 6 November','https://www.youtube.com/watch?v=xxLXyOewNhc'],
  ['Soumalya Chatterjee','High On Films · full firsthand review · version not stated · updated 10 November','https://www.highonfilms.com/ramayana-rise-of-a-legend-2026-movie-review/'],
+ ['Simon Ramshaw','ScreenAnarchy · full review · version not stated · 10 November','https://screenanarchy.com/amp/2026/11/ramayana-rise-of-a-legend-review-lavish-but-lumpy-take-on-one-of-the-original-epics.html'],
 ];
 const rows=document.querySelector('#rows');
 const evidence={
@@ -967,6 +968,26 @@ Object.assign(evidence['Yash as Ravana'].negative || (evidence['Yash as Ravana']
 Object.assign(evidence['Background score'].positive, {'Telugu Scope Review Desk':['summary','It said the background score lifts key moments.'],'Kausalya Suhari':['summary','She praised the music and said Hans Zimmer’s influence was evident.']});
 Object.assign(evidence['Background score'].negative, {'Thyview':['summary','Thyview said Rahman and Zimmer’s music did not stay with them.']});
 Object.assign(evidence['Songs'].negative, {'Telugu Scope Review Desk':['summary','The review called the songs forgettable.'],'Kausalya Suhari':['summary','She wished the film had included a song between Ram and Sita.']});
+for (const [topic, sentiment] of [
+ ['Storyline','negative'],
+ ['Characterisation & character development','negative'],
+ ['Runtime & pacing','negative'],
+ ['Action & choreography','positive'],['Action & choreography','negative'],
+ ['VFX overall','positive'],['VFX overall','negative'],
+ ['CGI creatures','positive'],['CGI creatures','negative'],
+ ['Ranbir as Rama','negative'],['Yash as Ravana','positive']
+]) data.find(x=>x.topic===topic)[sentiment].push('Simon Ramshaw');
+Object.assign(evidence['Storyline'].negative, {'Simon Ramshaw':['summary','He found the update disappointingly safe and said the story has little new to add.']});
+Object.assign(evidence['Characterisation & character development'].negative, {'Simon Ramshaw':['summary','He found Rama and Ravana painted in two shades, with both leads remaining schematic and uncomplicated.']});
+Object.assign(evidence['Runtime & pacing'].negative, {'Simon Ramshaw':['summary','He called the 195-minute runtime punishing and said the lumbering action and dogmatic repetitions made the film an endurance test.']});
+Object.assign(evidence['Action & choreography'].positive, {'Simon Ramshaw':['summary','He praised the peril and consequence in the climactic Jatayu–Ravana battle on the flying lotus.']});
+Object.assign(evidence['Action & choreography'].negative, {'Simon Ramshaw':['summary','He found the repeated Rama–Lakshmana demon brawls derivative.']});
+Object.assign(evidence['VFX overall'].positive, {'Simon Ramshaw':['summary','He praised the grand visual design and singled out the climactic flying-lotus spectacle.']});
+Object.assign(evidence['VFX overall'].negative, {'Simon Ramshaw':['summary','He compared the demonic brawls’ CGI unfavorably to dated fantasy blockbusters.']});
+Object.assign(evidence['CGI creatures'].positive, {'Simon Ramshaw':['summary','He called the rendered Airavata spectacular.']});
+Object.assign(evidence['CGI creatures'].negative, {'Simon Ramshaw':['summary','He said the repeated demonic brawls rely on dated-looking troll CGI.']});
+Object.assign(evidence['Ranbir as Rama'].negative, {'Simon Ramshaw':['summary','He said Kapoor’s appropriate poise and kindness could not overcome the flatness of the character as written.']});
+Object.assign(evidence['Yash as Ravana'].positive, {'Simon Ramshaw':['summary','He said Yash’s furious portrayal brings malevolent energy and makes the film come alive when he is on screen.']});
 </script>
 </body>
 </html>
