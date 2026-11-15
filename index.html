@@ -28,8 +28,8 @@
 <main class="wrap">
   <div class="eyebrow">Review tracker · Updated 15 November 2026</div>
   <h1>What reviewers said about <span>Ramayana</span></h1>
-  <p class="intro">A topic-by-topic view of 243 identifiable critics, creators and review channels discussing <em>Ramayana: Rise of a Legend</em>, from the Los Angeles premiere through the India release. Select a topic to see who expressed each opinion.</p>
-  <section class="cards" aria-label="Summary"><div class="card"><strong>243</strong><span>reviewers and channels in this sample</span></div><div class="card"><strong>13</strong><span>topics tracked</span></div><div class="card"><strong>1</strong><span>new reviewer added in this update</span></div></section>
+  <p class="intro">A topic-by-topic view of 244 identifiable critics, creators and review channels discussing <em>Ramayana: Rise of a Legend</em>, from the Los Angeles premiere through the India release. Select a topic to see who expressed each opinion.</p>
+  <section class="cards" aria-label="Summary"><div class="card"><strong>244</strong><span>reviewers and channels in this sample</span></div><div class="card"><strong>13</strong><span>topics tracked</span></div><div class="card"><strong>1</strong><span>new reviewer added in this update</span></div></section>
   <section class="panel" aria-labelledby="charttitle"><div class="panelhead"><div><h2 id="charttitle">Positive, negative, and no comment</h2><div class="small">Click any row for the reviewer names. Gray shows people who did not speak about the topic.</div></div><div class="legend"><span><i class="dot pos"></i>Positive</span><span><i class="dot neg"></i>Negative</span><span><i class="dot silent"></i>No comment</span></div></div><div class="controls" role="group" aria-label="Topic filter"><button class="active" data-filter="all">All topics</button><button data-filter="craft">Craft & action</button><button data-filter="story">Story, characters & pacing</button><button data-filter="cast">Cast</button><button data-filter="music">Music</button></div><div class="grid" id="rows"></div></section>
   <section class="panel" aria-labelledby="missingtitle"><h2 id="missingtitle">Songs missing from the shorter English cut</h2><p class="small">These are comments about songs being absent from the version screened, not judgments on the songs’ quality. They are excluded from the Songs row above.</p><div class="sourcegrid"><a class="source" href="https://x.com/MimiiLulu/status/2115312203264094288" target="_blank" rel="noopener noreferrer"><b>mimi ↗</b><span>Short excerpt: “Jai Jai Ram and the infamous haldi scene missing.” She said she wanted to watch the Hindi version.</span></a><a class="source" href="https://www.aajtak.in/entertainment/bollywood-news/story/ramayana-movie-review-by-our-stupid-reaction-youtubers-western-audience-english-dubbing-issues-tmova-dskc-2682437-2026-10-28" target="_blank" rel="noopener noreferrer"><b>Our Stupid Reactions ↗</b><span>Reported paraphrase: the hosts noticed songs missing from the English cut and felt some scenes called for them.</span></a><a class="source" href="https://www.absolutegeeks.com/reviews/ramayana-rise-of-a-legend-review-indias-biggest-epic-is-only-half-a-movie/" target="_blank" rel="noopener noreferrer"><b>Nadine J. ↗</b><span>Paraphrase: she said the shorter English cut removes most singing and dancing, which she felt takes away part of the film’s identity and rhythm.</span></a><a class="source" href="https://letterboxd.com/vinaybakshi_/film/ramayana-rise-of-a-legend/1/" target="_blank" rel="noopener noreferrer"><b>vinay bakshi ↗</b><span>He said the English cut removes the musical numbers that usually create spectacle and appeal for Western audiences.</span></a><a class="source" href="https://ashabardoneye.substack.com/p/ramayana-part-onerise-of-a-legend" target="_blank" rel="noopener noreferrer"><b>Asha Bardon ↗</b><span>She saw the Hindi version and noted that it includes the songs cut from the dubbed version.</span></a><a class="source" href="https://www.reddit.com/r/CriticalDrinker/comments/1xssbik/asian-cinema-has-dominated-the-world-wide-box/" target="_blank" rel="noopener noreferrer"><b>GardenFit235 ↗</b><span>They said Hindi has around 30 minutes of additional content, including more songs, and preferred it as the more emotional version.</span></a><a class="source" href="https://www.reddit.com/r/RamayanaTheFilm/comments/1xsokf2/my_honest_detailed_review_of_ramayana_must_read/" target="_blank" rel="noopener noreferrer"><b>Stock-Cauliflower-52 ↗</b><span>After watching both cuts, they said the English version removes several songs and scenes that establish Ram and Sita’s bond.</span></a></div></section>
   <section class="panel" aria-labelledby="sourcetitle"><h2 id="sourcetitle">Review sources</h2><p class="small">Click a positive or negative count to see that reviewer's points and short excerpts. Open the review title for the original source; secondary reporting is labelled.</p><div class="sourcegrid" id="sources"></div></section>
@@ -300,6 +300,7 @@ const sources=[
  ['Lalo Salamancaa','Letterboxd audience review · 14 November · version not stated','https://letterboxd.com/film/ramayana-rise-of-a-legend/reviews/'],
  ['Pari','Rotten Tomatoes audience review · posted 14 November · version not stated','https://www.rottentomatoes.com/m/ramayana_rise_of_a_legend'],
  ['Defiant_Muffin6587','Reddit r/IndianCinema · firsthand audience review · version not stated · 14 November','https://www.reddit.com/r/IndianCinema/comments/1xorx8m/ramayana_honest_review/'],
+ ['Sreelekha (YouTube)','Manorama report on her firsthand YouTube review · 15 November','https://www.manoramaonline.com/movies/movie-news/2026/11/14/sreelekha-praises-ramayana-movie-review.html'],
 ];
 const rows=document.querySelector('#rows');
 const evidence={
@@ -1342,6 +1343,25 @@ function render(filter='all'){
  })
 }
 document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.filter)}));
+const sreelekha='Sreelekha (YouTube)';
+for (const [topic,sentiment] of [
+ ['Storyline','positive'],
+ ['Characterisation & character development','positive'],
+ ['Runtime & pacing','positive'],
+ ['VFX overall','positive'],
+ ['Ranbir as Rama','negative'],
+ ['Sai Pallavi as Sita','positive'],
+ ['Yash as Ravana','positive'],
+ ['Background score','positive']
+]) data.find(x=>x.topic===topic)[sentiment].push(sreelekha);
+Object.assign(evidence['Storyline'].positive, {[sreelekha]:['summary','She said the film does justice to the Ramayana and that its first half held her attention.']});
+Object.assign(evidence['Characterisation & character development'].positive, {[sreelekha]:['summary','She praised the film’s Sita as a brave, martial-arts-skilled character, while noting this is a different portrayal from familiar versions.']});
+Object.assign(evidence['Runtime & pacing'].positive, {[sreelekha]:['summary','She said the roughly three-hour film did not bore her.']});
+Object.assign(evidence['VFX overall'].positive, {[sreelekha]:['summary','She praised the film’s visual depiction, which begins with the Devas–Asuras battle.']});
+Object.assign(evidence['Ranbir as Rama'].negative, {[sreelekha]:['summary','She felt Kapoor’s Rama seemed too calm and lacked visible emotion in moments such as romance, anger and parting from his father.']});
+Object.assign(evidence['Sai Pallavi as Sita'].positive, {[sreelekha]:['summary','She praised Pallavi’s performance as Sita.']});
+Object.assign(evidence['Yash as Ravana'].positive, {[sreelekha]:['summary','She praised Yash’s portrayal and expressive acting through his eyes.']});
+Object.assign(evidence['Background score'].positive, {[sreelekha]:['summary','She praised the music by A. R. Rahman and Hans Zimmer.']});
 const sourceBox=document.querySelector('#sources');sources.forEach(([name,type,url],index)=>{
  const card=document.createElement('div');card.className='source';
  const counts={positive:data.filter(d=>d.positive.includes(name)).length,negative:data.filter(d=>d.negative.includes(name)).length};
