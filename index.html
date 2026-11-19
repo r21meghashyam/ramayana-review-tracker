@@ -407,6 +407,11 @@ sources.push(
  ['somuchhuahai','Reddit r/IndianCinema · firsthand audience comment · version not stated · 19 November','https://www.reddit.com/r/IndianCinema/comments/1xyqi0u/comment/19ssoo36fb0w3/'],
  ['IMAryanDarad','Reddit r/IndianCinema · firsthand audience comment · version not stated · 19 November','https://www.reddit.com/r/IndianCinema/comments/1xyqi0u/comment/19ss6v7g18rwl/']
 );
+sources.push(
+ ['Accomplished-Ad539','Reddit r/bollywood_boxoffice · firsthand audience comment on the lead performances · version not stated · 19 November','https://www.reddit.com/r/bollywood_boxoffice/comments/1xza5m1/has_ramayana_lost_its_steam_or_is_it_on_expected/'],
+ ['ted_grant','Reddit r/bollywood_boxoffice · firsthand audience comment on story accuracy, visuals and lead performances · version not stated · 19 November','https://www.reddit.com/r/bollywood_boxoffice/comments/1xza5m1/has_ramayana_lost_its_steam_or_is_it_on_expected/'],
+ ['KrystleKaramel','Reddit r/bollywood_boxoffice · firsthand audience review; watched the last show in LA · version not stated · 19 November','https://www.reddit.com/r/bollywood_boxoffice/comments/1xza5m1/has_ramayana_lost_its_steam_or_is_it_on_expected/']
+);
 const rows=document.querySelector('#rows');
 const evidence={
  'Brahma AI lip sync':{
@@ -2377,6 +2382,27 @@ Object.assign(evidence['Runtime & pacing'].negative, {'Advanced_Ad4532':['summar
 Object.assign(evidence['Ranbir as Rama'].negative, {'iamrovinson':['summary','They said they could not connect with Rama and attributed it to Kapoor’s facial expressions.']});
 Object.assign(evidence['Yash as Ravana'].positive, {'iamrovinson':['summary','They praised Yash’s expressions and acting.']});
 Object.assign(evidence['CGI creatures'].negative, {'IMAryanDarad':['summary','They said the Rakshasas and Kumbhakarna looked like video-game characters.']});
+
+// Three newly verified firsthand audience comments posted 19 November 2026.
+for (const [topic,sentiment,reviewer] of [
+ ['Ranbir as Rama','negative','Accomplished-Ad539'],['Sai Pallavi as Sita','negative','Accomplished-Ad539'],
+ ['Storyline','negative','ted_grant'],['Ranbir as Rama','negative','ted_grant'],['Sai Pallavi as Sita','negative','ted_grant'],
+ ['VFX overall','positive','ted_grant'],['VFX overall','negative','ted_grant'],['VFX overall','negative','KrystleKaramel']
+]) data.find(x=>x.topic===topic)[sentiment].push(reviewer);
+Object.assign(evidence['Ranbir as Rama'].negative, {
+ 'Accomplished-Ad539':['summary','They called Rama and Sita, described as the film’s main attraction, “statues,” suggesting the central performances felt static.'],
+ 'ted_grant':['summary','They said the lead couple’s acting performances were bad.']
+});
+Object.assign(evidence['Sai Pallavi as Sita'].negative, {
+ 'Accomplished-Ad539':['summary','They called Rama and Sita, described as the film’s main attraction, “statues,” suggesting the central performances felt static.'],
+ 'ted_grant':['summary','They said the lead couple’s acting performances were bad.']
+});
+Object.assign(evidence['Storyline'].negative, {'ted_grant':['summary','They felt the film was inaccurate to the source story.']});
+Object.assign(evidence['VFX overall'].positive, {'ted_grant':['summary','They said the visuals were great in some parts.']});
+Object.assign(evidence['VFX overall'].negative, {
+ 'ted_grant':['summary','They felt the visuals were great only in parts.'],
+ 'KrystleKaramel':['summary','After watching the LA show, they felt the VFX looked artificial, noting the lack of practical shots and saying it was not at Avatar level.']
+});
 
 render();
 renderSources();
