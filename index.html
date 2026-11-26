@@ -3406,6 +3406,15 @@ sources.push(
  ['Sunil T (Rotten Tomatoes)','Rotten Tomatoes · brief firsthand audience verdict · no topic-specific claim scored · 26 November 2026','https://www.rottentomatoes.com/m/ramayana_rise_of_a_legend']
 );
 
+// New firsthand Letterboxd audience review, watched 26 November 2026.
+sources.push(
+ ['Amirdasudhan','Letterboxd · firsthand audience review · watched 26 November 2026 · version not stated','https://letterboxd.com/amirdasudhan/film/ramayana-rise-of-a-legend/']
+);
+data.find(x=>x.topic==='VFX overall').positive.push('Amirdasudhan');
+Object.assign(evidence['VFX overall'].positive, {
+ 'Amirdasudhan':['quote','Very good vfx.']
+});
+
 render();
 renderSources();
 </script>
