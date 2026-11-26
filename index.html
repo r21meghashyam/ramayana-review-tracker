@@ -3355,6 +3355,30 @@ Object.assign(evidence['Songs'].positive, {
  [shineObvious]:['summary','They praised the music.']
 });
 
+// Firsthand audience review after three cinema viewings, posted 25 November 2026.
+sources.push(
+ ['raj1138','Reddit r/worldoframayana · firsthand audience review · three cinema viewings · version not stated · 25 November 2026','https://www.reddit.com/r/worldoframayana/comments/1y4ttmj/my_thoughts_on_the_film/']
+);
+for (const [topic,sentiment] of [
+ ['Storyline','positive'],['Storyline','negative'],['Runtime & pacing','positive'],
+ ['VFX overall','positive'],['Background score','positive']
+]) data.find(x=>x.topic===topic)[sentiment].push('raj1138');
+Object.assign(evidence['Storyline'].negative, {
+ 'raj1138':['summary','Their first viewing felt rushed and seemed to leave out many events from Valmiki’s Ramayan.']
+});
+Object.assign(evidence['Storyline'].positive, {
+ 'raj1138':['summary','By a third viewing, they felt emotionally connected and called it probably the best film adaptation of Ramayana they expected for a long time.']
+});
+Object.assign(evidence['Runtime & pacing'].positive, {
+ 'raj1138':['summary','On their second viewing, they said the pacing and other filmmaking elements felt more coherent.']
+});
+Object.assign(evidence['VFX overall'].positive, {
+ 'raj1138':['summary','They said they appreciated the CGI more on their second viewing.']
+});
+Object.assign(evidence['Background score'].positive, {
+ 'raj1138':['summary','They said they appreciated the score more on their second viewing.']
+});
+
 render();
 renderSources();
 </script>
