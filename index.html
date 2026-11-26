@@ -3379,6 +3379,25 @@ Object.assign(evidence['Background score'].positive, {
  'raj1138':['summary','They said they appreciated the score more on their second viewing.']
 });
 
+// Firsthand audience review in a podcast episode released 26 November 2026.
+const shanthiRanganathan='Shanthi Ranganathan';
+const shanthiReview='https://podcasts.whipscribe.com/the-romesh-ranganathan-show/shanthis-ribbon-cutting-romeshs-traitors-fluke-a-festive-tv-debate';
+sources.push(
+ [shanthiRanganathan,'The Romesh Ranganathan Show · firsthand podcast review · five Shanthis out of five · 26 November 2026',shanthiReview]
+);
+for (const [topic,sentiment] of [
+ ['Storyline','positive'],['Dubbing & language versions','positive'],['Yash as Ravana','positive']
+]) data.find(x=>x.topic===topic)[sentiment].push(shanthiRanganathan);
+Object.assign(evidence['Storyline'].positive, {
+ [shanthiRanganathan]:['summary','She said Garuda’s death made her sad, showing that the scene affected her emotionally.']
+});
+Object.assign(evidence['Dubbing & language versions'].positive, {
+ [shanthiRanganathan]:['summary','She described the English-language version as easy to follow and said she enjoyed it overall.']
+});
+Object.assign(evidence['Yash as Ravana'].positive, {
+ [shanthiRanganathan]:['summary','She called Ravana wonderful and a scene-stealer, and praised his aggressive screen presence.']
+});
+
 render();
 renderSources();
 </script>
